@@ -1,7 +1,6 @@
 from typing import Optional, Iterable, Literal, Union, List, Mapping
 
 import httpx
-import openai
 from openai import NotGiven, NOT_GIVEN
 from openai.types.chat import ChatCompletionToolParam, ChatCompletionToolChoiceOptionParam, \
     ChatCompletionStreamOptionsParam, completion_create_params
@@ -42,7 +41,7 @@ class OpenAIChatGenerator(ABCChatGenerator):
         self._prompt_sanity_check(messages)
         response = self.client.chat.completions.create(
             model=self.model_name,
-            messages=messages,
+            messages=[m.to_dict() for m in messages],
             frequency_penalty=frequency_penalty,
             function_call=function_call,
             functions=functions,
