@@ -10,7 +10,7 @@ python = "^3.11"
 torch = "^2.4.0"
 sentence-transformers = "^3.0.1"
 openai = "^1.38.0"
-faiss-cpu = "^1.8.0.post1"
+chromadb = "^0.5.5"
 
 
 [build-system]

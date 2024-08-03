@@ -14,7 +14,7 @@ class SentenceTransformerEmbedder:
         return self.model.get_sentence_embedding_dimension()
 
     def embed_text(self, texts: [str]) -> torch.Tensor:
-        return self.model.encode(texts, convert_to_tensor=True)
+        return self.model.encode(texts, convert_to_tensor=True).cpu()
 
     def embed_documents(self, documents: [Type[ABCDocument]]) -> torch.Tensor:
         return self.model.encode([document.embed_text() for document in documents], convert_to_tensor=True).cpu()
