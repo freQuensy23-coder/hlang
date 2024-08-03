@@ -4,8 +4,9 @@ from openai import Client
 
 
 class OpenAILazyClient(Client):
-    def __init__(self):
-        super().__init__(api_key='sk-1234567890abcdef1234567890abcdef')
+    def __init__(self, **kwargs):
+        super().__init__(api_key='sk-1234567890abcdef1234567890abcdef',
+                         **kwargs)
 
     def set_key(self):
         self.api_key = os.getenv('OPENAI_API_KEY')

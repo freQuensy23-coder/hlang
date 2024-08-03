@@ -12,8 +12,8 @@ from hlang.openai_lazy_client import OpenAILazyClient
 
 
 class OpenAIChatGenerator(ABCChatGenerator):
-    def __init__(self, model_name: str):
-        self.client = OpenAILazyClient()
+    def __init__(self, model_name: str, base_url: str):
+        self.client = OpenAILazyClient(base_url=base_url)
         self.model_name = model_name
 
     def generate(self,
