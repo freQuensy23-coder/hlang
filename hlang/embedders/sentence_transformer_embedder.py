@@ -3,7 +3,7 @@ from typing import Type
 import torch
 from sentence_transformers import SentenceTransformer
 
-from openlangchain.documents.document import ABCDocument
+from hlang.documents.document import ABCDocument
 
 
 class SentenceTransformerEmbedder:

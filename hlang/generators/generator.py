@@ -1,7 +1,7 @@
 import warnings
 from abc import ABC, abstractmethod
 
-from openlangchain.dataclasses.message import ChatMessage, ChatRole
+from hlang.dataclasses.message import ChatMessage, ChatRole
 
 
 class ABCGenerator(ABC):

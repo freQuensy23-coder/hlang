@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from openlangchain.dataclasses.message import ChatRole, ChatMessage
+from hlang.dataclasses.message import ChatRole, ChatMessage
 
 
 class TestChatMessage(TestCase):

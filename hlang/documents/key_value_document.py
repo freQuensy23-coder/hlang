@@ -1,4 +1,4 @@
-from openlangchain.documents.document import ABCDocument
+from hlang.documents.document import ABCDocument
 
 
 class KeyValueDocument(ABCDocument):

@@ -2,8 +2,8 @@ from unittest import TestCase
 
 import torch
 
-from openlangchain.documents.simple_document import SimpleDocument
-from openlangchain.embedders.sentence_transformer_embedder import SentenceTransformerEmbedder
+from hlang.documents.simple_document import SimpleDocument
+from hlang.embedders.sentence_transformer_embedder import SentenceTransformerEmbedder
 
 
 class TestSentenceEmbedding(TestCase):

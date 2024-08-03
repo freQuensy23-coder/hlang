@@ -3,8 +3,8 @@ import warnings
 import transformers
 from transformers import PreTrainedModel
 
-from openlangchain.dataclasses.message import ChatMessage, ChatRole
-from openlangchain.generators.generator import ABCChatGenerator
+from hlang.dataclasses.message import ChatMessage, ChatRole
+from hlang.generators.generator import ABCChatGenerator
 
 
 class HuggingfaceChatLLMGenerator(ABCChatGenerator):

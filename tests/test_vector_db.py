@@ -2,8 +2,8 @@ from unittest import TestCase
 
 import torch
 
-from openlangchain.documents.simple_document import SimpleDocument
-from openlangchain.vectordb.vector_db import VectorDatabase
+from hlang.documents.simple_document import SimpleDocument
+from hlang.vectordb.vector_db import VectorDatabase
 
 
 class TestVectorDatabase(TestCase):

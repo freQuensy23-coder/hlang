@@ -6,8 +6,8 @@ from openai import NotGiven, NOT_GIVEN
 from openai.types.chat import ChatCompletionToolParam, ChatCompletionToolChoiceOptionParam, \
     ChatCompletionStreamOptionsParam, completion_create_params
 
-from openlangchain.dataclasses.message import ChatMessage
-from openlangchain.generators.generator import ABCChatGenerator
+from hlang.dataclasses.message import ChatMessage
+from hlang.generators.generator import ABCChatGenerator
 
 
 class OpenAIChatGenerator(ABCChatGenerator):

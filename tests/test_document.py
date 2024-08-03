@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from openlangchain.documents.key_value_document import KeyValueDocument
-from openlangchain.documents.simple_document import SimpleDocument
+from hlang.documents.key_value_document import KeyValueDocument
+from hlang.documents.simple_document import SimpleDocument
 
 
 class TestDocument(TestCase):

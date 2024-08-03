@@ -3,7 +3,7 @@ from typing import Type
 import chromadb
 import torch
 
-from openlangchain.documents.document import ABCDocument
+from hlang.documents.document import ABCDocument
 
 
 class VectorDatabase:
