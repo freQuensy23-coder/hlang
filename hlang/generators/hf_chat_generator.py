@@ -3,7 +3,7 @@ import warnings
 import transformers
 from transformers import PreTrainedModel
 
-from hlang.dataclasses.message import ChatMessage, ChatRole
+from hlang.dataclasses.message import ChatMessage
 from hlang.generators.generator import ABCChatGenerator
 
 

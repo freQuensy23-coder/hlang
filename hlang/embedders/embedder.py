@@ -22,5 +22,3 @@ class ABCEmbedder(ABC):
     @abstractmethod
     def get_embedding_dimension(self) -> int:
         pass
-
-
