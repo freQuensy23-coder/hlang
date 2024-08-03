@@ -9,8 +9,9 @@ from hlang.vectordb.vector_db import VectorStorage
 class TestVectorDatabase(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.embeddings = torch.rand(1_000, 312)
-        cls.documents = [Document(f"Document {i}") for i in range(5_000)]
+        N = 1_000
+        cls.embeddings = torch.rand(N, 312)
+        cls.documents = [Document(f"Document {i}") for i in range(N)]
         cls.db = VectorStorage(cls.documents, cls.embeddings)
 
     def test_search(self):
