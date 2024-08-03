@@ -42,7 +42,7 @@ class OpenAIChatGenerator(ABCChatGenerator):
                  extra_query: Mapping[str, object] | None = None,
                  extra_body=None,
                  timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-                 ) -> ChatMessage:
+                 ) -> ChatMessage | Iterable[ChatMessage]:
         self._prompt_sanity_check(messages)
         response = self.client.chat.completions.create(
             model=self.model_name,
@@ -72,8 +72,10 @@ class OpenAIChatGenerator(ABCChatGenerator):
             extra_body=extra_body,
             timeout=timeout
         )
-        text = response.response.text
-        return ChatMessage.from_assistant(text)
+        contents = [choice.message.content for choice in response.choices]
+        if not n or n == 1:
+            return ChatMessage.from_assistant(contents[0])
+        return [ChatMessage.from_assistant(content) for content in contents]
 
     def stream(self,
                messages: [ChatMessage],
