@@ -2,7 +2,7 @@ from unittest import TestCase
 
 import torch
 
-from hlang.documents.simple_document import SimpleDocument
+from hlang.documents.simple_document import Document
 from hlang.embedders.sentence_transformer_embedder import SentenceTransformerEmbedder
 
 
@@ -29,7 +29,7 @@ class TestSentenceEmbedding(TestCase):
 
     def test_embed_document(self):
         text = "Hello, world!"
-        doc = SimpleDocument(content=text)
+        doc = Document(content=text)
         embedding = self.model.embed_documents([doc])
         self.assertEqual(embedding.shape, (1, 312))
         self.assertLess(
@@ -39,7 +39,7 @@ class TestSentenceEmbedding(TestCase):
 
     def test_embed_document_batch(self):
         text = ["Hello, world!", "How are you?"]
-        docs = [SimpleDocument(content=t) for t in text]
+        docs = [Document(content=t) for t in text]
         embedding = self.model.embed_documents(docs)
         self.assertEqual(embedding.shape, (2, 312))
         self.assertLess(

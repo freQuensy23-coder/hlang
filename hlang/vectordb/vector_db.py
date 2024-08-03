@@ -6,7 +6,7 @@ import torch
 from hlang.documents.document import ABCDocument
 
 
-class VectorDatabase:
+class VectorStorage:
     def __init__(self, documents: [Type[ABCDocument]], embeddings: torch.Tensor):
         self.documents = documents
         self.embeddings = embeddings

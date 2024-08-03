@@ -1,13 +1,13 @@
 from unittest import TestCase
 
 from hlang.documents.key_value_document import KeyValueDocument
-from hlang.documents.simple_document import SimpleDocument
+from hlang.documents.simple_document import Document
 
 
 class TestDocument(TestCase):
 
     def test_simple_document(self):
-        doc = SimpleDocument(content="Hello, world!")
+        doc = Document(content="Hello, world!")
         self.assertEqual(doc.embed_text(), "Hello, world!")
 
     def test_key_value_document(self):

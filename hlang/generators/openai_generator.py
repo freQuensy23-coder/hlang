@@ -8,11 +8,12 @@ from openai.types.chat import ChatCompletionToolParam, ChatCompletionToolChoiceO
 
 from hlang.dataclasses.message import ChatMessage
 from hlang.generators.generator import ABCChatGenerator
+from hlang.openai_lazy_client import OpenAILazyClient
 
 
 class OpenAIChatGenerator(ABCChatGenerator):
     def __init__(self, model_name: str):
-        self.client = openai.Client()
+        self.client = OpenAILazyClient()
         self.model_name = model_name
 
     def generate(self,
