@@ -2,8 +2,7 @@ from typing import Optional, Iterable, Literal, Union, List, Mapping
 
 import httpx
 from openai import NotGiven, NOT_GIVEN
-from openai.types.chat import ChatCompletionToolParam, ChatCompletionToolChoiceOptionParam, \
-    ChatCompletionStreamOptionsParam, completion_create_params
+from openai.types.chat import ChatCompletionStreamOptionsParam, completion_create_params
 
 from hlang.dataclasses.message import ChatMessage
 from hlang.generators.generator import ABCChatGenerator
